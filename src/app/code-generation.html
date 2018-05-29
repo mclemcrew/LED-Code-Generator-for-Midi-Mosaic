@@ -1,0 +1,17 @@
+<div mat-dialog-actions style="margin-bottom: 10px">
+  <div class="box box-close foo" style="margin: 0 auto" type="button" (click)="onNoClick()" >Close</div>  
+  <div *ngIf="copyClicked=='true'" class="check_mark">
+  <div class="sa-icon sa-success animate">
+    <span class="sa-line sa-tip animateSuccessTip"></span>
+    <span class="sa-line sa-long animateSuccessLong"></span>
+    <div class="sa-placeholder"></div>
+    <div class="sa-fix"></div>
+  </div>
+  </div>
+  <div class="box foo" style="margin: 0 auto" type="button" ngxClipboard [cbContent]="data.code" (cbOnSuccess)="changeCopy()" [class.btn-success]="isCopied1">Copy</div>
+</div>
+<markdown ngPreserveWhitespaces>
+  ```c
+    {{data.code}}
+  ```
+</markdown>
