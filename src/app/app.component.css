@@ -71,8 +71,8 @@ body {
     border-radius: 20px;
   }
   button:hover{
-    background:#fff;
-    color: black;
+    background: rgb(202,220,230);;
+    color: #FF7E1B;
   }
   button:before,button:after{
     content:'';

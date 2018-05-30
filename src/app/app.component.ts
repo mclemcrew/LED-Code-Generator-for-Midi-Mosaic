@@ -20,44 +20,6 @@ export class AppComponent {
         this.boxBackground[i][j]='241,241,241';
       }
     }
-    this.code=`int i = 26;
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    for(int i=6; i>=0; i++) {
-      string.print("Something");
-    }
-    `;
   }
 
   boxClicked(row, column) {
@@ -90,9 +52,19 @@ export class AppComponent {
         this.boxBackground[i][j]='241,241,241';
       }
     }
+    this.code = '';
   }
 
   showCodeGeneration(): void {
+    for(let i = 0; i<8; i++) {
+      for(let j = 0; j<16; j++) {
+        if(this.boxBackground[i][j]!='241,241,241'&&this.boxBackground[i][j]!=',undefined,undefined')  // sometimes undefined shows up if the drag portion fails
+        this.code = this.code + 
+        `for(int i=6; i>=0; i++) {
+          string1.print(String1.Color(`+this.boxBackground[i][j]+`));
+        }`;
+      }
+    }
     let dialogRef = this.dialog.open(CodeGeneration, {
       width: '500px',
       height: '500px',
