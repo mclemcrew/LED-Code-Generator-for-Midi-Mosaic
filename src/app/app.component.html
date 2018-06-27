@@ -1,12 +1,15 @@
 <div class="full-screen" (mousedown)="mouseClicked()" (mouseup)="mouseReleased()">
+  <!-- Container of boxes -->
   <div class="flex-container" *ngFor="let row of numberOfRows; let r = index">
     <div class="card card-material" *ngFor="let column of numberOfColumns; let c = index" [ngStyle]="{ 'background': 'rgb(' + boxBackground[r][c] + ')'}"  (click)="boxClicked(r,c)" (mouseenter)="boxEntered(r,c)"></div>
   </div>
+  <!-- Reset and Generate Buttons -->
   <div style="margin-top:50px;">
     <div class="center-buttons">
         <button style="margin-right:10px" (click)="resetColors()">Reset Colors</button>
         <button style="margin-left:10px" (click)="showCodeGeneration()">Generate Code</button>
     </div>
+    <!-- Color Picker -->
     <div class="center-color-picker">
       <span 
        [cpToggle]="'true'"

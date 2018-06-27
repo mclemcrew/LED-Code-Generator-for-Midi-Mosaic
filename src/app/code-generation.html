@@ -1,5 +1,7 @@
 <div mat-dialog-actions style="margin-bottom: 10px">
-  <div class="box box-close foo" style="margin: 0 auto" type="button" (click)="onNoClick()" >Close</div>  
+  <!-- Close button -->
+  <div class="box box-close foo" style="margin: 0 auto" type="button" (click)="onNoClick()" >Close</div>
+  <!-- Check mark that will appear when the user clicks on "Copy"   -->
   <div *ngIf="copyClicked=='true'" class="check_mark">
   <div class="sa-icon sa-success animate">
     <span class="sa-line sa-tip animateSuccessTip"></span>
@@ -8,15 +10,17 @@
     <div class="sa-fix"></div>
   </div>
   </div>
+  <!-- Copy button -->
   <div class="box foo" style="margin: 0 auto" type="button" ngxClipboard [cbContent]="data.code" (cbOnSuccess)="changeCopy()" [class.btn-success]="isCopied1">Copy</div>
 </div>
+<!-- Procedurally generated LED Code -->
 <markdown ngPreserveWhitespaces *ngIf="data.code!=''">
   ```c
     {{data.code}}
   ```
 </markdown>
+<!-- If there wasn't any code to generate, show the error message -->
 <div *ngIf="data.code==''">
-
   <h3 style="margin-left:110px;margin-top:60px;color:white">
     Nothing to show here...
   </h3>
