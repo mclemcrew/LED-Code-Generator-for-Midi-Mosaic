@@ -69,7 +69,7 @@ export class AppComponent {
         // Sometimes undefined shows up if the drag portion fails, so check if the color was changed
         if(this.boxBackground[j][i]!='241,241,241'&&this.boxBackground[j][i]!=',undefined,undefined')
         // Prodcedural code to generate for displaying on the Midi Mosaic
-        this.code = this.code + `\n  setBlockColor(`+ ((i*8)+(j+1)) +`,led_strip_1.Color(`+ this.boxBackground[j][i] +`))`;
+        this.code = this.code + `\n  setBlockColor(`+ ((i*8)+(j+1)) +`,led_strip_1.Color(`+ this.boxBackground[j][i] +`));`;
       }
     }
     // Show the code generation modal
