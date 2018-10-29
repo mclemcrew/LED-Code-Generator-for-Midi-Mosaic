@@ -11,7 +11,7 @@
   </div>
   </div>
   <!-- Copy button -->
-  <div class="box foo" style="margin: 0 auto" type="button" ngxClipboard [cbContent]="data.code" (cbOnSuccess)="changeCopy()" [class.btn-success]="isCopied1">Copy</div>
+  <div class="box foo" style="margin: 0 auto" type="button" ngxClipboard [cbContent]="data.code" (cbOnSuccess)="changeCopy()" >Copy</div>
 </div>
 <!-- Procedurally generated LED Code -->
 <markdown ngPreserveWhitespaces *ngIf="data.code!=''">
